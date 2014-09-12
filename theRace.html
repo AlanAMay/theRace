@@ -1,0 +1,40 @@
+<script>
+//This is not a racing game but I already named it.
+	function Character(name, lvl){
+		this.name = name;
+		this.lvl = lvl;
+		this.hit = Math.floor(Math.random()* 3);
+		this.damage = Math.floor(Math.random()* 6 * this.lvl);
+		this.totalDamage = 0;
+		this.health = 50 * this.lvl;
+		this.youHit = function(){
+			if(this.hit = 1){
+				return this.totalDamage += this.damage;
+			}
+		}
+	};
+	function Monster(name, lvl){
+		this.name = name;
+		this.lvl = lvl;
+		this.hit = Math.floor(Math.random()* 5);
+		this.damage = Math.floor(Math.random()* 16 * this.lvl);
+		this.totalDamage = 0;
+		this.health = 100 * this.lvl;
+		this.youHit = function(){
+			if(this.hit = 1){
+				return this.totalDamage += this.damage;
+			}
+		}
+	};
+
+	var human = new Character("Nick", 3);
+	var dragon = new Monster("Robb", 1);
+
+	while(human.totalDamage < human.health && dragon.totalDamage < dragon.health){
+	human.youHit();
+	dragon.youHit();
+	console.log(human.name + " " + human.totalDamage);
+	console.log(dragon.name + " " + dragon.totalDamage);
+	};
+
+</script>
